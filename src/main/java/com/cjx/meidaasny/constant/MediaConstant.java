@@ -22,9 +22,9 @@ public class MediaConstant {
     public final static Integer AUDIO_CHANNEL = 1;
 
     /**
-     * 视频码率
+     * 视频帧率
      */
-    public final static Integer VIDEO_FRAMERATE = 15;
+    public final static Integer VIDEO_FRAMERATE = 30;
     /**
      * 视频编码格式
      */
@@ -32,7 +32,7 @@ public class MediaConstant {
     /**
      * 视频比特率
      */
-    public final static Integer VIDEO_BITRATE = 3200000;
+    public final static Integer VIDEO_BITRATE = 3856000;
     /**
      * 视频格式
      */

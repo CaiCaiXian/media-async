@@ -25,15 +25,17 @@ public class MediaUtil {
         // 转码为MP4
         AudioAttributes audio = new AudioAttributes();
         // 音频编码格式
-        audio.setCodec(MediaConstant.AUDIO_CODE);
-        audio.setBitRate(MediaConstant.AUDIO_BITRATE);
-        audio.setChannels(MediaConstant.AUDIO_CHANNEL);
+        //audio.setCodec(MediaConstant.AUDIO_CODE);
+        //audio.setBitRate(MediaConstant.AUDIO_BITRATE);
+        //audio.setChannels(MediaConstant.AUDIO_CHANNEL);
+        audio.setCodec(AudioAttributes.DIRECT_STREAM_COPY);
         VideoAttributes video = new VideoAttributes();
         // 视频编码格式
-        video.setCodec(MediaConstant.VIDEO_CODE);
-        video.setBitRate(MediaConstant.VIDEO_BITRATE);
+        video.setCodec(VideoAttributes.DIRECT_STREAM_COPY);
+        //video.setCodec(MediaConstant.VIDEO_CODE);
+        //video.setBitRate(MediaConstant.VIDEO_BITRATE);
         // 数字设置小了，视频会卡顿
-        video.setFrameRate(MediaConstant.VIDEO_FRAMERATE);
+        //video.setFrameRate(MediaConstant.VIDEO_FRAMERATE);
         attrs.setFormat(MediaConstant.VIDE_FORMAT);
         attrs.setAudioAttributes(audio);
         attrs.setVideoAttributes(video);
