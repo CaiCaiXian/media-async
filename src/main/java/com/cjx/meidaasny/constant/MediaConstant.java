@@ -32,7 +32,7 @@ public class MediaConstant {
     /**
      * 视频比特率
      */
-    public final static Integer VIDEO_BITRATE = 3856000;
+    public final static Integer VIDEO_BITRATE = 3200000;
     /**
      * 视频格式
      */

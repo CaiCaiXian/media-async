@@ -19,23 +19,27 @@ public class MediaUtil {
      * 获取转码属性
      * @return EncodingAttributes 转码属性
      */
-    public static EncodingAttributes getEncodingAttributes(){
+    public static EncodingAttributes getEncodingAttributes(String code){
         //转码属性
         EncodingAttributes attrs = new EncodingAttributes();
-        // 转码为MP4
         AudioAttributes audio = new AudioAttributes();
-        // 音频编码格式
-        //audio.setCodec(MediaConstant.AUDIO_CODE);
-        //audio.setBitRate(MediaConstant.AUDIO_BITRATE);
-        //audio.setChannels(MediaConstant.AUDIO_CHANNEL);
-        audio.setCodec(AudioAttributes.DIRECT_STREAM_COPY);
         VideoAttributes video = new VideoAttributes();
+        if(!code.equals(MediaConstant.VIDE_FORMAT)){
+        // 转码为MP4
+        // 音频编码格式
+        audio.setBitRate(MediaConstant.AUDIO_BITRATE);
+        audio.setChannels(MediaConstant.AUDIO_CHANNEL);
+        audio.setCodec(MediaConstant.AUDIO_CODE);
         // 视频编码格式
-        video.setCodec(VideoAttributes.DIRECT_STREAM_COPY);
-        //video.setCodec(MediaConstant.VIDEO_CODE);
-        //video.setBitRate(MediaConstant.VIDEO_BITRATE);
+        video.setCodec(MediaConstant.VIDEO_CODE);
+        video.setBitRate(MediaConstant.VIDEO_BITRATE);
         // 数字设置小了，视频会卡顿
-        //video.setFrameRate(MediaConstant.VIDEO_FRAMERATE);
+        video.setFrameRate(MediaConstant.VIDEO_FRAMERATE);
+        }
+        else{
+            video.setCodec(VideoAttributes.DIRECT_STREAM_COPY);
+            audio.setCodec(AudioAttributes.DIRECT_STREAM_COPY);
+        }
         attrs.setFormat(MediaConstant.VIDE_FORMAT);
         attrs.setAudioAttributes(audio);
         attrs.setVideoAttributes(video);

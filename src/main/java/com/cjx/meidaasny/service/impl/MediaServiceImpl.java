@@ -30,7 +30,7 @@ public class MediaServiceImpl implements MediaService {
                 WebSocketService.sendInfo("文件"+fileName+"上传失败",userId);
             }
             //获取转码参数
-            EncodingAttributes attrs = MediaUtil.getEncodingAttributes();
+            EncodingAttributes attrs = MediaUtil.getEncodingAttributes(fileName.substring(fileName.lastIndexOf(".")+1));
             //创建目标文件 路径是你要保存文件的路径，实际上应该是在配置文件中写好。这里为了方便直接写死。
             // 防止重名
             Date date = new Date();
